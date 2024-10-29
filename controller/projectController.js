@@ -9,7 +9,7 @@ export const addNewProject = catchAsyncErrors(async (req, res, next) => {
   }
   const { projectBanner } = req.files;
   const { title, description, gitRepoLink, projectLink, stack, technologies, deployed, } = req.body;
-  if (!title || !description || !gitRepoLink || !projectLink || !stack || !technologies || !deployed) {
+  if (!title || !description || !stack || !technologies || !deployed) {
     return next(new ErrorHandler("Please provide all details!", 400));
   }
   const cloudinaryResponse = await cloudinary.uploader.upload(
