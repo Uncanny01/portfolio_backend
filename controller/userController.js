@@ -208,7 +208,7 @@ export const resetPassword = catchAsyncErrors(async (req, res, next) => {
 })
 
 export const getPortfolio = catchAsyncErrors(async (req, res, next) => {
-  const id = "66f1069bd52fb89f1508dbdd";
+  const id = "66fbbaaab914d18335101f86";
   const user = await User.findById(id);
   if (!user) return next(new ErrorHandler("User no longer existed.", 404));
   res.status(200).json({
